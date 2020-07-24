@@ -24,18 +24,18 @@
 	<mvc:resources location="/" mapping="/robots.txt"/>
 	<mvc:resources location="/" mapping="/sitemap.xml"/>
 	<mvc:resources location="/" mapping="/sitemap.txt" />
-	
+
 	<!-- 设置ctxPath -->
-	<!--<mvc:interceptors>-->
-		<!--<mvc:interceptor>-->
-			<!--<mvc:mapping path="/**" />-->
-			<!--<bean class="com.gqgx.interceptor.InitPathInterceptor"/>-->
-		<!--</mvc:interceptor>-->
-	<!--</mvc:interceptors>-->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.bdqn.interceptor.InitPathInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 	
-	<!-- 设置使用注解的类所在的jar包 -->
-	<!--<context:component-scan base-package="com.gqgx.action" />-->
+	<!--设置使用注解的类所在的jar包-->
+	<context:component-scan base-package="com.bdqn.action" />
 
 	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">   
 	    <property name="favorPathExtension" value="false" />  
